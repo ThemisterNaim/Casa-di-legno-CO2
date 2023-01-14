@@ -41,7 +41,7 @@ void attivazione() {
 void aprire() {
 
   digitalWrite(chiave, HIGH);  //Attiva il transistor che collega il ground al servo
-  while (maniglia <= 120) {     //Gira il Servo di 90° in senso orario.
+  while (maniglia <= 110) {     //Gira il Servo di 90° in senso orario.
     myPorta.write(maniglia);
     delay(15);
     maniglia++;
@@ -55,7 +55,6 @@ void aprire() {
 
 void chiudere() {
   digitalWrite(npn, LOW);  //per prevenire "interferenze" tra il motore DC e il servo
-  delay(500);
 
   digitalWrite(chiave, HIGH);
   while (maniglia >= 0) {  //Gira il servo di 90° in senso anti orario per chiudere la porta
